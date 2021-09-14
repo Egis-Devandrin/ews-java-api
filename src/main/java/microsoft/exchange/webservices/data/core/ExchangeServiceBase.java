@@ -203,6 +203,7 @@ public abstract class ExchangeServiceBase implements Closeable {
     httpClient = HttpClients.custom()
       .setConnectionManager(httpConnectionManager)
       .setTargetAuthenticationStrategy(authStrategy)
+      .useSystemProperties()
       .build();
   }
 
@@ -216,6 +217,7 @@ public abstract class ExchangeServiceBase implements Closeable {
     httpPoolingClient = HttpClients.custom()
         .setConnectionManager(httpConnectionManager)
         .setTargetAuthenticationStrategy(authStrategy)
+        .useSystemProperties()
         .build();
   }
 
